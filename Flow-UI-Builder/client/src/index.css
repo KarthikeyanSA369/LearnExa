@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Neon Energy Palette */
+  /* Main Background: #0F172A */
+  --background: 222 47% 11%;
+  /* Dashboard Cards: #020617 */
+  --card: 224 71% 4%;
+  --card-foreground: 215 20% 65%; /* #94A3B8 */
+
+  /* Nav: #22D3EE */
+  --primary: 189 83% 53%;
+  --primary-foreground: 222 84% 5%; /* #020617 */
+
+  /* Primary Button: #A855F7 */
+  --accent: 271 91% 65%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Text Colors */
+  --foreground: 210 40% 98%; /* Lightest text for contrast */
+  --muted: 215 16% 47%;
+  --muted-foreground: 215 20% 65%;
+
+  /* Borders */
+  --border: 189 83% 53%; /* #22D3EE */
+  --input: 222 47% 11%;
+  --ring: 189 83% 53%;
+
+  /* Heatmap Status Colors */
+  --success: 142 71% 45%; /* #22C55E */
+  --warning: 48 96% 53%; /* #FACC15 */
+  --destructive: 346 87% 60%; /* #F43F5E */
+
+  /* Custom Fonts */
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-wide text-cyan-100;
+  }
+}
+
+@layer utilities {
+  .text-neon-cyan {
+    color: #22D3EE;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  }
+  
+  .text-neon-purple {
+    color: #A855F7;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+
+  .border-neon {
+    border-color: #22D3EE;
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.2);
+  }
+
+  .glass-card {
+    @apply bg-card border border-cyan-500/30 shadow-lg shadow-cyan-500/10 backdrop-blur-sm rounded-xl;
+  }
+  
+  .glass-input {
+    @apply bg-background/50 border border-cyan-500/50 text-slate-200 placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all rounded-md;
+  }
+}
+
+/* Scrollbar styling for that cyberpunk feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617; 
+}
+::-webkit-scrollbar-thumb {
+  background: #22D3EE; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7; 
+}
